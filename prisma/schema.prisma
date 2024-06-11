@@ -1,0 +1,86 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output = "../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("MONGODB_URI")
+  relationMode = "prisma"
+}
+
+model repository {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  name     String @unique
+  githubUrl String
+  repoTag      String[]
+  customTag     String[]
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+}
+
+model data {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  name              String
+  full_name         String
+  owner             Owner
+  html_url          String
+  description       String
+  tags_url          String
+  created_at        DateTime
+  updated_at        DateTime
+  pushed_at         DateTime
+  clone_url         String
+  svn_url           String
+  homepage          String
+  size              Int
+  stargazers_count  Int
+  watchers_count    Int
+  language          String
+  forks_count       Int
+  open_issues_count Int
+  license_name      License
+  topics            String[]
+  visibility        String
+  forks             Int
+  open_issues       Int
+  watchers          Int
+  default_branch    String
+  network_count     Int
+  subscribers_count Int
+  repoTag           String[]
+  customTag         String[]
+  latestTag         String
+}
+
+type Owner {
+  login       String
+  avatar_url  String
+  gravatar_id String
+  html_url    String
+  type        String
+}
+
+type License {
+  key         String
+  name        String
+}
+
+model feedback {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  name     String
+  email   String
+  phone      String
+  message     String
+}
+
+model notify {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  email   String
+}
