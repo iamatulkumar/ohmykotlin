@@ -104,54 +104,63 @@ async function saveToDb(result: any, repoTag: string[], customTag: string[]) {
 
 }
 
+// export async function GET() {
+//     const repoList:any = await db.data.findMany()
+//
+//     for (const request of repoList) {
+//     const result = await fetch(request.tags_url, {
+//         method: "GET",
+//         headers: {
+//             accept: "application/json",
+//             authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+//             "X-GitHub-Api-Version": "2022-11-28"
+//         },
+//         next: {
+//             revalidate: 0,
+//         },
+//     });
+//
+//     const responseResult = await result.json();
+//     await db.data.update({
+//         where: {
+//             id: request.id
+//         },
+//         data: {
+//             latestTag: responseResult[0].name
+//         }
+//     })
+//     }
+//
+//     for (const request of repoList) {
+//         const {name, githubUrl, repoTag, customTag} = request;
+//         const result = await fetch(`https://api.github.com/repos/${name}`, {
+//             method: "GET",
+//             headers: {
+//                 accept: "application/json",
+//                 authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+//                 "X-GitHub-Api-Version": "2022-11-28"
+//             },
+//             next: {
+//                 revalidate: 0,
+//             },
+//         });
+//
+//         const responseResult = await result.json();
+//         await saveToDb(responseResult, repoTag, customTag);
+//
+//     }
+//
+//     return NextResponse.json(
+//         { user: "responseResult", message: "User already register with the email" },
+//         { status: 200 },
+//     );
+// }
+
 export async function GET() {
     const repoList:any = await db.data.findMany()
 
-    for (const request of repoList) {
-    const result = await fetch(request.tags_url, {
-        method: "GET",
-        headers: {
-            accept: "application/json",
-            authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-            "X-GitHub-Api-Version": "2022-11-28"
-        },
-        next: {
-            revalidate: 0,
-        },
-    });
-
-    const responseResult = await result.json();
-    await db.data.update({
-        where: {
-            id: request.id
-        },
-        data: {
-            latestTag: responseResult[0].name
-        }
-    })
-    }
-
-    // for (const request of repoList) {
-    //     const {name, githubUrl, repoTag, customTag} = request;
-    //     const result = await fetch(`https://api.github.com/repos/${name}`, {
-    //         method: "GET",
-    //         headers: {
-    //             accept: "application/json",
-    //             authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-    //             "X-GitHub-Api-Version": "2022-11-28"
-    //         },
-    //         next: {
-    //             revalidate: 0,
-    //         },
-    //     });
-    //
-    //     const responseResult = await result.json();
-    //     await saveToDb(responseResult, repoTag, customTag);
-    //
-    // }
-
     return NextResponse.json(
-        { user: "responseResult", message: "User already register with the email" },
+        { user: repoList, message: "User already register with the email" },
         { status: 200 },
     );
 }
