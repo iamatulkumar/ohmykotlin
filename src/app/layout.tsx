@@ -22,12 +22,17 @@ export default function RootLayout({
       <link rel="icon" href="/favicon.ico"/>
       <title>Kotlin Multiplatform Libraries</title>
       <meta name="og:type" content="website"/>
+      <meta name="google-site-verification" content="JMEkdKCO2Nazmsm6biyyWS0J895wn--ARupl2l1FYAI"/>
       <meta name="description" content="Discover Android/kotlin multiplatform libraries in one place"/>
       <meta name="og:title" content="ohmykotlin"/>
-      <meta name="description" content="Build cross-platform apps faster with Kotlin Multiplatform. This technology lets you share code between Android, iOS, and other platforms, reducing development time and maintenance while offering native performance."/>
-      <meta name="description" content="Unleash the power of native development for all platforms with Kotlin Multiplatform. Share code across projects, write less code overall, and deliver high-performing apps for any device."/>
-      <meta name="description" content="Kotlin Multiplatform: Write once, deploy everywhere. Share code for a faster, more efficient cross-platform development experience."/>
-      <meta name="keywords" content="Jetpack compose, Kotlin multiplatform libraries, android dependencies, kotlin dependencies, compose multiplatform"/>
+      <meta name="description"
+            content="Build cross-platform apps faster with Kotlin Multiplatform. This technology lets you share code between Android, iOS, and other platforms, reducing development time and maintenance while offering native performance."/>
+      <meta name="description"
+            content="Unleash the power of native development for all platforms with Kotlin Multiplatform. Share code across projects, write less code overall, and deliver high-performing apps for any device."/>
+      <meta name="description"
+            content="Kotlin Multiplatform: Write once, deploy everywhere. Share code for a faster, more efficient cross-platform development experience."/>
+      <meta name="keywords"
+            content="Jetpack compose, Kotlin multiplatform libraries, android dependencies, kotlin dependencies, compose multiplatform"/>
       <meta name="og:url" content="https://ohmykotlin.com/"/>
       <meta name="og:description" content="Discover Android/kotlin multiplatform libraries in one place"/>
     </head>
