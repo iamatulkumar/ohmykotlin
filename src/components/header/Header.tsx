@@ -5,11 +5,11 @@ import {Dialog, DialogPanel} from "@headlessui/react";
 import {useState} from "react";
 
 const navigation = [
-    { name: 'KMM', href: '/comingsoon' },
-    { name: 'Compose UI', href: '/comingsoon' },
+    { name: 'KMM', href: '/kmm' },
+    { name: 'Compose UI', href: '/composeui' },
     { name: 'Tools', href: '/comingsoon' },
-    { name: 'Blogs', href: '/comingsoon' },
-    { name: 'Kotlin GPT', href: '/comingsoon' },
+    { name: 'Blogs', href: '/blog' },
+    { name: 'Kotlin GPT', href: '/kotlingpt' },
 ]
 
 const Header = () => {
