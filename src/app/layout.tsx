@@ -16,7 +16,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <head>
+      <meta charSet="utf-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      <link rel="icon" href="/favicon.ico"/>
+      <title>Kotlin Multiplatform Libraries</title>
+      <meta name="og:type" content="website"/>
+      <meta name="description" content="Discover Android/kotlin multiplatform libraries in one place"/>
+      <meta name="og:title" content="ohmykotlin"/>
+      <meta name="description" content="Build cross-platform apps faster with Kotlin Multiplatform. This technology lets you share code between Android, iOS, and other platforms, reducing development time and maintenance while offering native performance."/>
+      <meta name="description" content="Unleash the power of native development for all platforms with Kotlin Multiplatform. Share code across projects, write less code overall, and deliver high-performing apps for any device."/>
+      <meta name="description" content="Kotlin Multiplatform: Write once, deploy everywhere. Share code for a faster, more efficient cross-platform development experience."/>
+      <meta name="keywords" content="Jetpack compose, Kotlin multiplatform libraries, android dependencies, kotlin dependencies, compose multiplatform"/>
+      <meta name="og:url" content="https://ohmykotlin.com/"/>
+      <meta name="og:description" content="Discover Android/kotlin multiplatform libraries in one place"/>
+    </head>
+    <body className={inter.className}>{children}</body>
     </html>
   );
 }
